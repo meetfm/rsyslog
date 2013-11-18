@@ -88,5 +88,4 @@ template "/etc/logrotate.d/rsyslog" do
   owner "root"
   group "root"
   mode 515
-  path "rsyslog"
 end
