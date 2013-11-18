@@ -84,7 +84,7 @@ service node['rsyslog']['service_name'] do
   action   [:enable, :start]
 end
 
-file "/etc/logrotate.d/rsyslog" do
+template "/etc/logrotate.d/rsyslog" do
   owner "root"
   group "root"
   mode 515
