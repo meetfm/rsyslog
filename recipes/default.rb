@@ -83,3 +83,10 @@ service node['rsyslog']['service_name'] do
   supports :restart => true, :reload => true, :status => true
   action   [:enable, :start]
 end
+
+cookbook_file "logrotate_fix.conf" do
+  owner "root"
+  group "root"
+  mode 515
+  path "/etc/logrotate.d/rsyslog"
+end
