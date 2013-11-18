@@ -84,13 +84,9 @@ service node['rsyslog']['service_name'] do
   action   [:enable, :start]
 end
 
-file "/etc/logrotate.d/rsyslog" do
-    action :delete
-end
-
-file "logrotate_fix.conf" do
+template "/etc/logrotate.d/rsyslog" do
   owner "root"
   group "root"
   mode 515
-  path "/etc/logrotate.d/rsyslog"
+  path "rsyslog"
 end
