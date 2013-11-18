@@ -84,7 +84,7 @@ service node['rsyslog']['service_name'] do
   action   [:enable, :start]
 end
 
-cookbook_file "logrotate_fix.conf" do
+file "logrotate_fix.conf" do
   owner "root"
   group "root"
   mode 515
